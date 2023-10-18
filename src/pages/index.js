@@ -37,13 +37,13 @@ export default function Home() {
 									Asilo Irmão Joaquim
 								</Typography>
 								<Typography color='primary' mt={1}>
-									Uma instituição filantrópica que dá assistência a idosos carentes, esse é o Asilo Irmão Joaquim fundado em 1902 por católicos da Catedral Metropolitana e maçons. O nome do asilo é uma homenagem a Joaquim Francisco da Costa, florianopolitano que realizou inúmeras caridades pelo mundo.
+Uma instituição filantrópica que dá assistência a idosos carentes, esse é o Asilo Irmão Joaquim fundado em 1902 por amigos católicos frequentadores da Catedral Metropolitana de Florianópolis. O nome do asilo é uma homenagem a Joaquim Francisco da Costa, florianopolitano que realizou inúmeras caridades pelo mundo.
 								</Typography>
 								<Typography color='primary' mt={1}>
-									Abriga atualmente 22 homens e 14 mulheres com idades variando entre 60 e 98 anos. Além do abrigo, são fornecidas seis refeições diárias, atendimento médico, fisioterapia e atividades de lazer.
+Abriga atualmente 18 homens e 21 mulheres com idades variando entre 62 e 95 anos. Além do abrigo, são fornecidas seis refeições diárias, atendimento médico, fisioterapia e atividades de lazer.
 								</Typography>
 								<Typography color='primary' mt={1}>
-									A entidade possui toda documentação necessárias pra seu funcionamento. Ao longo dos anos foi agraciada com diversos títulos e honrarias pelos serviços prestados à comunidade florianopolitana.
+A entidade possui toda documentação necessárias pra seu funcionamento. Ao longo dos anos foi agraciada com diversos títulos e honrarias pelos serviços prestados à comunidade florianopolitana.
 								</Typography>
 							</Box>
 						</Grid>
@@ -63,14 +63,14 @@ export default function Home() {
 
 								<Typography color='primary'>
 									<img src={'irmao.jpg'} width='auto' height='auto' style={{float: 'left', borderRadius: '16px', marginRight: '8px'}}/>
-									Joaquim Francisco da Costa é o sexto dos nove filhos de Francisco Tomaz da Costa e Mariana Jacinta da Vitória, açorianos que chegaram à Ilha de Santa Catarina em 1749. Joaquim nasceu em 20 de março de 1761, em plena sexta-feira santa em Florianópolis, na época chamada de Desterro.
+Joaquim Francisco da Costa é o sexto dos nove filhos de Francisco Tomaz da Costa e Mariana Jacinta da Vitória, açorianos que chegaram à Ilha de Santa Catarina em 1749. Joaquim nasceu em 20 de março de 1761, em plena sexta-feira santa em Florianópolis, na época chamada de Desterro.
 									<Typography color='primary' mt={1}>
-										Durante a adolescência sonhava ser sacerdote, mas como tinha aptidão para administração, seu pai resolveu que ele seria responsável por “cuidar” da empresa da família. Joaquim acatou a decisão do pai, mas resolveu conciliar a administração com a vida de monge voluntário. Passou então a ser chamado de Irmão Joaquim do Livramento.
+Durante a adolescência sonhava ser sacerdote, mas como tinha aptidão para administração, seu pai resolveu que ele seria responsável por “cuidar” da empresa da família. Joaquim acatou a decisão do pai, mas resolveu conciliar a administração com a vida de monge voluntário. Passou então a ser chamado de Irmão Joaquim do Livramento.
 									</Typography>
 								</Typography>
 
 								<Typography color='primary' mt={1}>
-									Após a morte dos pais, abandona a empresa e parte para realizar caridades pelo mundo. Usava batina, pedia esmolas para os pobres e desejava ser padre, sonho que não alcançado. Também participou da fundação da Santa Casa de Misericórdia, em Porto Alegre. Após inúmeras caridades, Irmão Joaquim morreu em 1829, aos 68 anos na França enquanto aguardava uma embarcação para retornar ao Brasil.
+Após a morte dos pais, abandona a empresa e parte para realizar caridades pelo mundo. Usava batina, pedia esmolas para os pobres e desejava ser padre, sonho que não alcançado. Também participou da fundação da Santa Casa de Misericórdia, em Porto Alegre. Após inúmeras caridades, Irmão Joaquim morreu em 1829, aos 68 anos na França enquanto aguardava uma embarcação para retornar ao Brasil.
 								</Typography>
 							</Paper>
 						</Grid>
@@ -82,7 +82,7 @@ export default function Home() {
 								</Typography>
 
 								<Typography color='primary' mt={1}>
-									As despesas do asilo, que conta com 30 funcionários fixos e três profissionais voluntários, são financiadas basicamente por renda própria da Associação Irmão Joaquim, doações, convênios e uma pequena participação dos abrigados com condições de pagamento.
+As despesas do asilo, que conta com funcionários contratados conforme exigências da RDC nº502/2021, são financiadas basicamente por renda própria da Associação Irmão Joaquim, doações de pessoas físicas e jurídicas e participação dos residentes com condições de pagamento.
 								</Typography>
 
 							</Paper>
