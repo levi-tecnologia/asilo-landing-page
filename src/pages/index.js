@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import Head from 'next/head'
-import {Fab, Paper, Grid, Container, Box, Typography} from '@mui/material'
+import {Menu, Button, AppBar, Toolbar, IconButton, Paper, Grid, Container, Box, Typography, MenuItem} from '@mui/material'
 import PixIcon from '@mui/icons-material/Pix';
 import MapIcon from '@mui/icons-material/Map';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PhoneIcon from '@mui/icons-material/Phone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Home() {
 
@@ -18,8 +20,93 @@ export default function Home() {
 		setIsMobile(IS_MOBILE)
 	}, [])
 
+	const [anchorElNav, setAnchorElNav] = React.useState(null);
+	const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+	const handleOpenNavMenu = (event) => {
+		setAnchorElNav(event.currentTarget);
+	};
+	const handleOpenUserMenu = (event) => {
+		setAnchorElUser(event.currentTarget);
+	};
+
+	const handleCloseNavMenu = () => {
+		setAnchorElNav(null);
+	};
+
+	const handleCloseUserMenu = () => {
+		setAnchorElUser(null);
+	};
+
+	const links = [
+		{link: '#historia', label: 'História'},
+		{link: '#servicos', label: 'Serviços'},
+		{link: '#irmao', label: 'Irmão Joaquim'},
+		{link: '#ajudar', label: 'Ajudar'},
+		{link: '#contatos', label: 'Contatos'},
+	];
+
+	const colorYellow = '#ffffe8'
+
 	return (
 		<Box sx={{bgcolor: '#f5f5f5', minHeight: '100vh', pb: 0}}>
+
+			<AppBar color='white' position="fixed">
+				<Container maxWidth="xl">
+					<Toolbar disableGutters>
+						<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+							<IconButton
+								size="large"
+								aria-label="account of current user"
+								aria-controls="menu-appbar"
+								aria-haspopup="true"
+								onClick={handleOpenNavMenu}
+								color="inherit"
+							>
+								<MenuIcon />
+							</IconButton>
+							<Menu
+								id="menu-appbar"
+								anchorEl={anchorElNav}
+								anchorOrigin={{
+									vertical: 'bottom',
+									horizontal: 'left',
+								}}
+								keepMounted
+								transformOrigin={{
+									vertical: 'top',
+									horizontal: 'left',
+								}}
+								open={Boolean(anchorElNav)}
+								onClose={handleCloseNavMenu}
+								sx={{
+									display: { xs: 'block', md: 'none' },
+								}}
+							>
+								{links.map((link) => (
+									<a href={`${link.link}`}>
+										<MenuItem key={link.link} onClick={handleCloseNavMenu}>
+											<Typography textAlign="center">{link.label}</Typography>
+										</MenuItem>
+									</a>
+								))}
+							</Menu>
+						</Box>
+						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+							<Box sx={{display: 'flex', flexGrow: 1}} />
+							{links.map((link) => (
+								<a href={`${link.link}`}>
+									<Typography color='#000000' key={link.link} onClick={handleCloseNavMenu} sx={{ ml: 2, color: 'white', display: 'block' }} >
+										{link.label}
+									</Typography>
+								</a>
+							))}
+						</Box>
+
+					</Toolbar>
+				</Container>
+			</AppBar>
+
 			<Head>
 				<title>Asilo Irmão Joaquim</title>
 				<meta name="description" content="Asilo Irmão Joaquim" />
@@ -27,36 +114,30 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Fab color='success' sx={{position: 'absolute', top: 16, right: 16}}>
-				<a href='https://api.whatsapp.com/send?phone=5548998005347' target='_blanck'>
-					<Box sx={{display: 'flex', alignItems: 'center'}}>
-						<WhatsAppIcon color='inherit' /> 
-					</Box>
-				</a>
-			</Fab>
-
-			<Box sx={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: IS_MOBILE ? '500px' : '500px', 
-				display: 'flex', flexDirection: 'column', pl: IS_MOBILE ? 0 : 8, justifyContent: 'center', backgroundImage: "url('asilo2.webp')"}}>
-
-				<Box sx={{display: 'flex', justifyContent: 'flex-end', pr: IS_MOBILE ? 0 : 16, mt: -16}}>
+			<Box sx={{mt: 8, bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 2}}>
+				<Box sx={{display: 'flex', justifyContent: 'center'}}>
 					<img src={'logo.png'} height='auto' width='160px' />
-				</Box>
-
-				<Typography align={IS_MOBILE ? 'center' : ''} fontSize={IS_MOBILE ? 42 : 50} sx={{color: '#141414'}} fontWeight={700}>
-					Asilo Irmão Joaquim
-				</Typography>
-				<Box align={IS_MOBILE ? 'center' : ''}>
-					<Box sx={{p:1, bgcolor: 'rgba(255, 234, 158, 0.8)', borderRadius: '16px', width: '350px'}}>
-						<Box sx={{p:1, bgcolor: 'rgba(249, 220, 128, 0.5)', borderRadius: '16px'}}>
-							<Typography fontSize={18} sx={{color: '#141414'}} fontWeight={700}>
-								Um Lar de Amor e Carinho para Idosos
-							</Typography>
-						</Box>
-					</Box>
 				</Box>
 			</Box>
 
-			<Box sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
+			<Box sx={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '500px', 
+				display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundImage: "url('asilo2.webp')"}}>
+
+				<Box sx={{p:1, bgcolor: 'rgba(255, 255, 255, 0.8)', borderRadius: '16px', width: '500px'}}>
+					<Typography align={'center'} fontSize={IS_MOBILE ? 42 : 50} sx={{color: '#375e43'}} fontWeight={700}>
+						Asilo Irmão Joaquim
+					</Typography>
+				</Box>
+
+				<Box sx={{mt: 1, p:1, bgcolor: 'rgba(255, 255, 255, 0.8)', borderRadius: '16px', width: '350px'}}>
+					<Typography fontSize={18} sx={{color: '#3b6548'}} fontWeight={700} align='center'>
+						Um Lar de Amor e Carinho para Idosos
+					</Typography>
+				</Box>
+
+			</Box>
+
+			<Box id='historia' sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
 				<Container>
 					<Grid container spacing={1}>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'right'}>
@@ -72,17 +153,17 @@ export default function Home() {
 							</Box>
 						</Grid>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
-							<img src={'imagem1.jpeg'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
+							<img src={'imagem1.1.webp'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
 						</Grid>
 					</Grid>
 				</Container>
 			</Box>
 
-			<Box sx={{bgcolor: '#e4efe8', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
+			<Box id='servicos' sx={{bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
 				<Container>
 					<Grid container spacing={1}>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'right'}>
-							<img src={'imagem2.jpeg'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
+							<img src={'imagem2.1.webp'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
 						</Grid>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
 							<Box sx={{mt: IS_MOBILE ? 2 : 0, height: IS_MOBILE ? 'auto' : '400px', display: 'flex', alignItems: 'center'}}>
@@ -103,7 +184,7 @@ export default function Home() {
 				</Container>
 			</Box>
 
-			<Box sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
+			<Box id='irmao' sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
 				<Container>
 					<Grid container spacing={1}>
 						<Grid item xs={12} sm={8} align={IS_MOBILE ? 'center' : 'right'}>
@@ -138,12 +219,12 @@ export default function Home() {
 				</Container>
 			</Box>
 
-			<Box sx={{bgcolor: '#e4efe8', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: IS_MOBILE ? 2 : 8}}>
+			<Box id='ajudar' sx={{bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: IS_MOBILE ? 2 : 8}}>
 				<Container>
 					<Grid container spacing={1}>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'right'}>
 							<Box sx={{height: IS_MOBILE ? '250px' : '400px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-								<img src={'imagem5.jpeg'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
+								<img src={'imagem5.1.webp'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
 							</Box>
 						</Grid>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
@@ -169,69 +250,49 @@ export default function Home() {
 				</Container>
 			</Box>
 
-			<Box sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8, pb: 6}}>
+			<Box id='contatos' sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pb: 6}}>
 				<Container>
-					<Grid container spacing={1}>
-						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'right'}>
-							<Box sx={{height: IS_MOBILE ? 'auto' : '400px', display: 'flex', alignItems: 'center'}}>
-								<Box sx={{mr: IS_MOBILE ? 0 : 4}}>
-								<Typography color='#ffffff' fontWeight={700} fontSize={30}>
-									Como Ajudar
-								</Typography>
+					<Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
 
-								<Typography color='#ffffff' mt={1}>
-									Para colaborar você pode entregar as doações na secretaria do asilo na Avenida Mauro Ramos, 901, Centro, Florianópolis. 
-								</Typography>
-
-								<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
-									<PixIcon color='#ffffff' sx={{mr: 1}} /> 
-									<Typography color='#ffffff'>
-										Chave Pix: asilo@hospitalcarloscorrea.com.br
-									</Typography>
-								</Box>
-
-								<a href='https://maps.app.goo.gl/pTDfKgPdarVgm4E5A' target='_blanck'>
-									<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
-										<MapIcon color='#ffffff' sx={{mr: 1}} /> 
-										<Typography color='#ffffff'>
-											Google Maps
-										</Typography>
-									</Box>
-								</a>
-
-								<a href='tel:4832227544' target='_blanck'>
-									<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
-										<PhoneIcon color='#ffffff' sx={{mr: 1}} /> 
-										<Typography color='#ffffff'>
-											Telefone: (48) 3222-7544
-										</Typography>
-									</Box>
-								</a>
-
-								<a href='https://www.instagram.com/asiloirmao/' target='_blanck'>
-									<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
-										<InstagramIcon color='#ffffff' sx={{mr: 1}} /> 
-										<Typography color='#ffffff'>
-											Instagram asiloirmao
-										</Typography>
-									</Box>
-								</a>
-
-								<a href='https://api.whatsapp.com/send?phone=5548998005347' target='_blanck'>
-									<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
-										<WhatsAppIcon color='#ffffff' sx={{mr: 1}} /> 
-										<Typography color='#ffffff'>
-											WhatsApp 48 9 9800-5347
-										</Typography>
-									</Box>
-								</a>
-								</Box>
+						<a href='https://maps.app.goo.gl/pTDfKgPdarVgm4E5A' target='_blanck'>
+							<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
+								<IconButton color='white'>
+									<LocationOnIcon sx={{mr: 1}} /> 
+								</IconButton>
 							</Box>
-						</Grid>
-						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
-							<img src={'imagem6.jpeg'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
-						</Grid>
-					</Grid>
+						</a>
+
+						<a href='tel:4832227544' target='_blanck'>
+							<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
+								<IconButton color='white'>
+									<PhoneIcon color='white' sx={{mr: 1}} /> 
+								</IconButton>
+							</Box>
+						</a>
+
+						<a href='https://www.instagram.com/asiloirmao/' target='_blanck'>
+							<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
+								<IconButton color='white'>
+									<InstagramIcon color='#ffffff' sx={{mr: 1}} /> 
+								</IconButton>
+							</Box>
+						</a>
+
+						<a href='https://api.whatsapp.com/send?phone=5548998005347' target='_blanck'>
+							<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
+								<IconButton color='white'>
+									<WhatsAppIcon color='#ffffff' sx={{mr: 1}} /> 
+								</IconButton>
+							</Box>
+						</a>
+
+						<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
+							<IconButton color='white'>
+								<PixIcon color='#ffffff' sx={{mr: 1}} /> 
+							</IconButton>
+						</Box>
+
+					</Box>
 				</Container>
 			</Box>
 

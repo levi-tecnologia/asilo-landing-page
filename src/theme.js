@@ -7,6 +7,11 @@ const theme = createTheme({
 	shape: {
 		borderRadius: 3,
 	},
+	palette: {
+		white: {
+			main: '#FFFFFF',
+		},
+	},
 	components: {
 		MuiAlert: {
 			styleOverrides: {
