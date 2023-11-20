@@ -46,12 +46,12 @@ export default function Home() {
 		{link: '#contatos', label: 'Contatos'},
 	];
 
-	const colorYellow = '#ffffe8'
+	const colorYellow = '#e4efe8'
 
 	return (
 		<Box sx={{bgcolor: '#f5f5f5', minHeight: '100vh', pb: 0}}>
 
-			<AppBar color='white' position="fixed">
+			<AppBar color='blue' position="fixed">
 				<Container maxWidth="xl">
 					<Toolbar disableGutters>
 						<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -114,7 +114,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Box sx={{mt: 8, bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 2}}>
+			<Box sx={{mt: IS_MOBILE ? 7 : 8, bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 2}}>
 				<Box sx={{display: 'flex', justifyContent: 'center'}}>
 					<img src={'logo.png'} height='auto' width='160px' />
 				</Box>
@@ -123,17 +123,21 @@ export default function Home() {
 			<Box sx={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '500px', 
 				display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundImage: "url('asilo2.webp')"}}>
 
-				<Box sx={{p:1, bgcolor: 'rgba(255, 255, 255, 0.8)', borderRadius: '16px', width: '500px'}}>
-					<Typography align={'center'} fontSize={IS_MOBILE ? 42 : 50} sx={{color: '#375e43'}} fontWeight={700}>
-						Asilo Irmão Joaquim
-					</Typography>
-				</Box>
+				{
+					false && <>
+						<Box sx={{p:1, bgcolor: 'rgba(255, 255, 255, 0.8)', borderRadius: '16px',}}>
+							<Typography align={'center'} fontSize={IS_MOBILE ? 36 : 50} sx={{color: '#375e43'}} fontWeight={700}>
+								Conheça Nosso Asilo
+							</Typography>
+						</Box>
 
-				<Box sx={{mt: 1, p:1, bgcolor: 'rgba(255, 255, 255, 0.8)', borderRadius: '16px', width: '350px'}}>
-					<Typography fontSize={18} sx={{color: '#3b6548'}} fontWeight={700} align='center'>
-						Um Lar de Amor e Carinho para Idosos
-					</Typography>
-				</Box>
+						<Box sx={{mt: 1, p:1, bgcolor: 'rgba(255, 255, 255, 0.8)', borderRadius: '16px'}}>
+							<Typography fontSize={IS_MOBILE ? 14 : 18} sx={{color: '#3b6548'}} fontWeight={700} align='center'>
+								No asilo, o acolhimento é essencial para proporcional uma qualidade de vida.
+							</Typography>
+						</Box>
+					</>
+				}
 
 			</Box>
 
