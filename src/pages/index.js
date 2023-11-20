@@ -168,6 +168,9 @@ export default function Home() {
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
 							<Box sx={{mt: IS_MOBILE ? 2 : 0, height: IS_MOBILE ? 'auto' : '400px', display: 'flex', alignItems: 'center'}}>
 								<Box sx={{ml: IS_MOBILE ? 0 : 4}}>
+									<Typography color='#000000' fontSize={36} fontWeight={700}>
+										Nossos Serviços
+									</Typography>
 									<Typography color='#000000' fontSize={16}>
 										Atualmente, o asilo abriga 39 idosos, sendo 18 homens e 21 mulheres. A idade dos residentes varia entre 62 e 95 anos. Além do abrigo, o asilo oferece seis refeições diárias, atendimento médico, fisioterapia e atividades de lazer.
 									</Typography>
