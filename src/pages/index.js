@@ -84,11 +84,11 @@ export default function Home() {
 							>
 								{links.map((link) => (
 									<a href={`${link.link}`}>
-										<Button>
-											<MenuItem key={link.link} onClick={handleCloseNavMenu}>
-												<Typography color='#FFFFFF' textAlign="center">{link.label}</Typography>
-											</MenuItem>
-										</Button>
+										<MenuItem key={link.link} onClick={handleCloseNavMenu}>
+											<Button>
+												<Typography color='#000000' textAlign="center">{link.label}</Typography>
+											</Button>
+										</MenuItem>
 									</a>
 								))}
 							</Menu>
