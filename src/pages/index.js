@@ -60,7 +60,7 @@ export default function Home() {
 								aria-controls="menu-appbar"
 								aria-haspopup="true"
 								onClick={handleOpenNavMenu}
-								color="inherit"
+								color="white"
 							>
 								<MenuIcon color='#FFFFFF' />
 							</IconButton>
