@@ -14,6 +14,9 @@ const theme = createTheme({
 		blue: {
 			main: '#e4efe8',
 		},
+		blueDark: {
+			main: '#376d7b',
+		}
 	},
 	components: {
 		MuiAlert: {
