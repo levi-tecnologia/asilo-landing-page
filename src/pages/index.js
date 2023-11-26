@@ -126,7 +126,7 @@ export default function Home() {
 				display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundImage: "url('capa.webp')"}}>
 			</Box>
 
-			<Box id='historia' sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
+			<Box id='historia' sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8, pb: 4}}>
 				<Container>
 					<Grid container spacing={1}>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
@@ -150,7 +150,7 @@ export default function Home() {
 				</Container>
 			</Box>
 
-			<Box id='servicos' sx={{bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
+			<Box id='servicos' sx={{bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8, pb: 4}}>
 				<Container>
 					<Grid container spacing={1}>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
@@ -178,7 +178,7 @@ export default function Home() {
 				</Container>
 			</Box>
 
-			<Box id='irmao' sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
+			<Box id='irmao' sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8, pb: 4}}>
 				<Container>
 					<Grid container spacing={1}>
 						<Grid item xs={12} sm={8} align={IS_MOBILE ? 'center' : 'left'}>
@@ -213,7 +213,7 @@ export default function Home() {
 				</Container>
 			</Box>
 
-			<Box id='ajudar' sx={{bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: IS_MOBILE ? 2 : 8}}>
+			<Box id='ajudar' sx={{bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: IS_MOBILE ? 2 : 8, pb: 4}}>
 				<Container>
 					<Grid container spacing={1}>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'right'}>
