@@ -43,7 +43,6 @@ export default function Home() {
 		{link: '#servicos', label: 'Serviços'},
 		{link: '#irmao', label: 'Irmão Joaquim'},
 		{link: '#ajudar', label: 'Ajudar'},
-		{link: '#contatos', label: 'Contatos'},
 	];
 
 	const colorYellow = '#e4efe8'
@@ -51,7 +50,7 @@ export default function Home() {
 	return (
 		<Box sx={{bgcolor: '#f5f5f5', minHeight: '100vh', pb: 0}}>
 
-			<AppBar color='blue' position="fixed">
+			<AppBar color='blueDark' position="fixed">
 				<Container maxWidth="xl">
 					<Toolbar disableGutters>
 						<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -63,7 +62,7 @@ export default function Home() {
 								onClick={handleOpenNavMenu}
 								color="inherit"
 							>
-								<MenuIcon />
+								<MenuIcon color='#FFFFFF' />
 							</IconButton>
 							<Menu
 								id="menu-appbar"
@@ -85,20 +84,23 @@ export default function Home() {
 							>
 								{links.map((link) => (
 									<a href={`${link.link}`}>
-										<MenuItem key={link.link} onClick={handleCloseNavMenu}>
-											<Typography textAlign="center">{link.label}</Typography>
-										</MenuItem>
+										<Button>
+											<MenuItem key={link.link} onClick={handleCloseNavMenu}>
+												<Typography color='#FFFFFF' textAlign="center">{link.label}</Typography>
+											</MenuItem>
+										</Button>
 									</a>
 								))}
 							</Menu>
 						</Box>
-						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-							<Box sx={{display: 'flex', flexGrow: 1}} />
+						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
 							{links.map((link) => (
 								<a href={`${link.link}`}>
-									<Typography color='#000000' key={link.link} onClick={handleCloseNavMenu} sx={{ ml: 2, color: 'white', display: 'block' }} >
-										{link.label}
-									</Typography>
+									<Button>
+										<Typography color='#FFFFFF' key={link.link} onClick={handleCloseNavMenu} sx={{ ml: 2, display: 'block' }} >
+											{link.label}
+										</Typography>
+									</Button>
 								</a>
 							))}
 						</Box>
@@ -120,33 +122,16 @@ export default function Home() {
 				</Box>
 			</Box>
 
-			<Box sx={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '500px', 
-				display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundImage: "url('asilo2.webp')"}}>
-
-				{
-					false && <>
-						<Box sx={{p:1, bgcolor: 'rgba(255, 255, 255, 0.8)', borderRadius: '16px',}}>
-							<Typography align={'center'} fontSize={IS_MOBILE ? 36 : 50} sx={{color: '#375e43'}} fontWeight={700}>
-								Conheça Nosso Asilo
-							</Typography>
-						</Box>
-
-						<Box sx={{mt: 1, p:1, bgcolor: 'rgba(255, 255, 255, 0.8)', borderRadius: '16px'}}>
-							<Typography fontSize={IS_MOBILE ? 14 : 18} sx={{color: '#3b6548'}} fontWeight={700} align='center'>
-								No asilo, o acolhimento é essencial para proporcional uma qualidade de vida.
-							</Typography>
-						</Box>
-					</>
-				}
-
+			<Box sx={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '900px', 
+				display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundImage: "url('capa.webp')"}}>
 			</Box>
 
 			<Box id='historia' sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
 				<Container>
 					<Grid container spacing={1}>
-						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'right'}>
+						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
 							<Box sx={{height: '400px', display: 'flex', alignItems: 'center'}}>
-								<Box sx={{ml: IS_MOBILE ? 0 : 4}}>
+								<Box sx={{mr: IS_MOBILE ? 0 : 4}}>
 									<Typography color='#FFFFFF' fontSize={36} fontWeight={700}>
 										História do asilo
 									</Typography>
@@ -157,7 +142,9 @@ export default function Home() {
 							</Box>
 						</Grid>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
-							<img src={'imagem1.1.webp'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
+							<Box sx={{ml: 4}}>
+								<img src={'imagem1.1.webp'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
+							</Box>
 						</Grid>
 					</Grid>
 				</Container>
@@ -166,7 +153,7 @@ export default function Home() {
 			<Box id='servicos' sx={{bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
 				<Container>
 					<Grid container spacing={1}>
-						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'right'}>
+						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
 							<img src={'imagem2.1.webp'} height={IS_MOBILE ? '200px' : '400px'} width='auto' style={{borderRadius: '16px'}} />
 						</Grid>
 						<Grid item xs={12} sm={6} align={IS_MOBILE ? 'center' : 'left'}>
@@ -194,7 +181,7 @@ export default function Home() {
 			<Box id='irmao' sx={{bgcolor: '#376d7b', minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 8}}>
 				<Container>
 					<Grid container spacing={1}>
-						<Grid item xs={12} sm={8} align={IS_MOBILE ? 'center' : 'right'}>
+						<Grid item xs={12} sm={8} align={IS_MOBILE ? 'center' : 'left'}>
 							<Box sx={{height: IS_MOBILE ? 'auto' : '500px', display: 'flex', alignItems: 'center'}}>
 								<Box sx={{mr: IS_MOBILE ? 0 : 4}}>
 									<Typography color='#FFFFFF' fontSize={36} fontWeight={700}>
@@ -220,7 +207,7 @@ export default function Home() {
 							</Box>
 						</Grid>
 						<Grid item xs={12} sm={4} align={IS_MOBILE ? 'center' : 'left'}>
-							<img src={'irmao.jpg'} width={IS_MOBILE ? 'auto' : '300px'} height={IS_MOBILE ? '400px' : 'auto'} style={{borderRadius: '16px'}}/>
+							<img src={'irmao2.webp'} width={IS_MOBILE ? 'auto' : '300px'} height={IS_MOBILE ? '400px' : 'auto'} style={{borderRadius: '16px'}}/>
 						</Grid>
 					</Grid>
 				</Container>
@@ -250,6 +237,13 @@ export default function Home() {
 									<Typography color='#000000' fontSize={18} mt={1}>
 										Para colaborar com o Asilo Irmão Joaquim, você pode fazer uma doação em dinheiro ou em bens, como alimentos, roupas ou medicamentos. Também pode participar de eventos e campanhas de arrecadação.
 									</Typography>
+
+									<Box sx={{mt: 2}}>
+										<Typography color=''>
+											<b>PIX</b>: asilo@hospitalcarloscorrea.com.br
+										</Typography>
+									</Box>
+
 								</Box>
 							</Box>
 						</Grid>
@@ -292,12 +286,6 @@ export default function Home() {
 								</IconButton>
 							</Box>
 						</a>
-
-						<Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
-							<IconButton color='white'>
-								<PixIcon color='#ffffff' sx={{mr: 1}} /> 
-							</IconButton>
-						</Box>
 
 					</Box>
 				</Container>
