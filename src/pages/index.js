@@ -15,7 +15,7 @@ export default function Home() {
 	useEffect(() => {
 		let IS_MOBILE = null
 		if (typeof window !== 'undefined') {
-			IS_MOBILE = window.screen.width < 400
+			IS_MOBILE = window.screen.width < 430
 		}
 		setIsMobile(IS_MOBILE)
 	}, [])
