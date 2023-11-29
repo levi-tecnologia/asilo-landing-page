@@ -92,8 +92,12 @@ export default function Home() {
 									</a>
 								))}
 							</Menu>
+							<Box sx={{flexGrow: 1, display: 'flex', justifyContent: 'center'}}>
+								<img src={'logoBranca2.webp'} height='auto' width='160px' />
+							</Box>
 						</Box>
 						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
+							<img src={'logoBranca2.webp'} height='auto' width='160px' />
 							{links.map((link) => (
 								<a href={`${link.link}`}>
 									<Button>
@@ -115,12 +119,6 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-
-			<Box sx={{mt: IS_MOBILE ? 7 : 8, bgcolor: colorYellow, minHeight: '100px', p: IS_MOBILE ? 0 : 2, pt: 2}}>
-				<Box sx={{display: 'flex', justifyContent: 'center'}}>
-					<img src={'logo.png'} height='auto' width='160px' />
-				</Box>
-			</Box>
 
 			<Box sx={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '900px', 
 				display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundImage: "url('capa.webp')"}}>
